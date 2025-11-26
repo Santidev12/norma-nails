@@ -40,10 +40,10 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep }) => 
                 <div className={`
                   w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300
                   ${isPast
-                    ? "bg-green-500 border-green-500 text-white"
+                    ? "bg-beige-800 border-beige-800 text-white"
                     : isActive
-                      ? "bg-beige-200 border-white text-white"
-                      : "bg-white border-gray-300 text-gray-400"}
+                      ? "bg-transparent border-beige-800 text-beige-800"
+                      : "bg-transparent border-gray-400 text-gray-400"}
                 `}>
                   <span>{isPast ? "✔" : index + 1}</span>
                 </div>

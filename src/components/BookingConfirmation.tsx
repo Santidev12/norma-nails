@@ -54,7 +54,7 @@ export const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
       {/* Detalles de la cita */}
       <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
         {/* Header con gradiente */}
-        <div className="bg-gradient-to-r from-pink-500 to-rose-500 text-white p-6">
+        <div className="bg-linear-to-r from-beige-300 to-beige-500 text-white p-6">
           <h3 className="text-xl font-semibold text-center">
             Detalles de tu Cita
           </h3>
@@ -63,8 +63,8 @@ export const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
         {/* Contenido */}
         <div className="p-6 space-y-4">
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-              <Sparkles className="w-5 h-5 text-pink-600" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <Sparkles className="w-5 h-5 text-beige-600" />
             </div>
             <div>
               <p className="font-semibold text-gray-800">{selectedService.name}</p>
@@ -73,8 +73,8 @@ export const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
           </div>
 
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-              <Calendar className="w-5 h-5 text-blue-600" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <Calendar className="w-5 h-5 text-beige-600" />
             </div>
             <div>
               <p className="font-semibold text-gray-800 capitalize">
@@ -84,8 +84,8 @@ export const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
           </div>
 
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-              <Clock className="w-5 h-5 text-purple-600" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <Clock className="w-5 h-5 text-beige-600" />
             </div>
             <div>
               <p className="font-semibold text-gray-800">
@@ -95,8 +95,8 @@ export const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
           </div>
 
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
-              <Mail className="w-5 h-5 text-green-600" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <Mail className="w-5 h-5 text-beige-600" />
             </div>
             <div>
               <p className="font-semibold text-gray-800">{clientName}</p>
@@ -106,39 +106,29 @@ export const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
         </div>
       </div>
 
-      {/* Información adicional */}
-      <div className="max-w-md mx-auto space-y-4">
-        <div className="bg-green-50 rounded-xl p-4 border border-green-200">
-          <h4 className="font-semibold text-green-800 mb-2">¿Qué sigue?</h4>
-          <ul className="text-sm text-green-700 space-y-1">
-            <li>✓ Confirmación enviada a tu email</li>
-            <li>✓ Recordatorio 24 horas antes</li>
-            <li>✓ Evento agregado a Google Calendar</li>
-          </ul>
-        </div>
-
-        <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-          <h4 className="font-semibold text-amber-800 mb-2">Recordatorios:</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
-            <li>• Llega 5 minutos antes de tu cita</li>
-            <li>• Trae una identificación válida</li>
-            <li>• Para cancelar, llama al menos 24h antes</li>
-          </ul>
+      <div className="max-w-md mx-auto">
+        <div className="rounded-xl p-4 border border-beige-200">
+          <h4 className="font-semibold text-beige-800 mb-2">Recordatorio importante</h4>
+          <p className="text-sm text-beige-700">
+            Por favor procura llegar <strong>5 minutos antes</strong> a tu cita y, si necesitas
+            cancelarla, hazlo con al menos <strong>24 horas de anticipación</strong>.
+          </p>
         </div>
       </div>
+
 
       {/* Botones de acción */}
       <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
         <button
           onClick={onNewBooking}
-          className="flex-1 bg-white border-2 border-pink-500 text-pink-500 py-3 px-6 rounded-xl font-semibold hover:bg-pink-50 transition-colors"
+          className="flex-1 bg-white border-2 border-beige-500 text-beige-500 py-3 px-6 rounded-xl font-semibold hover:bg-beige-50 transition-colors"
         >
           Nueva Reserva
         </button>
-        
+
         <button
           onClick={() => window.location.href = '/'}
-          className="flex-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center"
+          className="flex-1 bg-linear-to-r from-beige-500 to-beige-600 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center"
         >
           <Home className="w-4 h-4 mr-2" />
           Inicio

@@ -7,8 +7,9 @@ import { DatePicker } from './components/DatePicker';
 import { TimeSlotPicker } from './components/TimeSlotPicker';
 import { BookingForm } from './components/BookingForm';
 import { BookingConfirmation } from './components/BookingConfirmation';
-import { BackButton } from './components/BackButton';
 import { useBooking } from './hooks/useBooking';
+import { Button } from './components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 function BookingFlow() {
   const {
@@ -84,7 +85,7 @@ function BookingFlow() {
   const showBackButton = state.step !== 'service' && state.step !== 'confirmation';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-beige-100 via-white to-beige-200 font-generalSansSemiboldItalic">
+    <div className="min-h-screen bg-linear-to-br from-beige-100 via-white to-beige-50 font-generalSansSemiboldItalic">
       <Header />
 
       <main className="container mx-auto px-4 py-8">
@@ -96,7 +97,10 @@ function BookingFlow() {
         {/* Botón de atrás */}
         {showBackButton && (
           <div className="max-w-6xl mx-auto mb-6">
-            <BackButton onClick={goBack} disabled={state.isLoading} />
+            <Button variant="ghost" onClick={goBack}>
+              <ArrowLeft className="w-4 h-4 mr-2" />
+                Atrás
+            </Button>
           </div>
         )}
 
@@ -119,7 +123,7 @@ function BookingFlow() {
       <footer className="bg-gray-50 border-t border-gray-200 py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-600 text-sm">
-            © 2025 GlamNails Studio. Todos los derechos reservados.
+            © 2025 Nails Studio by Norma. Todos los derechos reservados.
           </p>
           <p className="text-gray-500 text-xs mt-2">
             Hecho con 💅 para nuestras clientas

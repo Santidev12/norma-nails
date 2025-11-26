@@ -15,9 +15,9 @@ const initialState: BookingState = {
   error: null
 };
 
-const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/1wxi1eac02p13anbhkx77dscqfwpbx8l';
 
 export const useBooking = () => {
+  const url = import.meta.env.VITE_MAKE_WEBHOOK_URL || '';
   const [state, setState] = useState<BookingState>(initialState);
 
   const [emailService] = useState(() => new EmailService());
@@ -89,7 +89,7 @@ export const useBooking = () => {
 
       console.log('Enviando reserva a Make:', payload);
 
-      const response = await fetch(MAKE_WEBHOOK_URL, {
+      const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

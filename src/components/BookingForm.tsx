@@ -81,16 +81,16 @@ export const BookingForm: React.FC<BookingFormProps> = ({
 
       <div className="max-w-lg mx-auto">
         {/* Resumen de la reserva */}
-        <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-6 mb-6 border border-pink-100">
+        <div className="bg-linear-to-r from-beige-100 to-beige-50 rounded-2xl p-6 mb-6 border border-beige-200 shadow">
           <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-            <Sparkles className="w-5 h-5 text-pink-500 mr-2" />
+            <Sparkles className="w-5 h-5 text-beige-500 mr-2" />
             Resumen de tu Cita
           </h3>
           
           <div className="space-y-3">
             <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                <Sparkles className="w-4 h-4 text-pink-600" />
+              <div className="w-8 h-8 bg-beige-100 rounded-full flex items-center justify-center mr-3">
+                <Sparkles className="w-4 h-4 text-beige-600" />
               </div>
               <div>
                 <p className="font-medium">{selectedService.name}</p>
@@ -99,8 +99,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             </div>
 
             <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                <Calendar className="w-4 h-4 text-pink-600" />
+              <div className="w-8 h-8 bg-beige-100 rounded-full flex items-center justify-center mr-3">
+                <Calendar className="w-4 h-4 text-beige-600" />
               </div>
               <div>
                 <p className="font-medium capitalize">{formatDate(selectedDate)}</p>
@@ -108,8 +108,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             </div>
 
             <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                <Clock className="w-4 h-4 text-pink-600" />
+              <div className="w-8 h-8 bg-beige-100 rounded-full flex items-center justify-center mr-3">
+                <Clock className="w-4 h-4 text-beige-600" />
               </div>
               <div>
                 <p className="font-medium">{formatTime(selectedTime)}</p>
@@ -134,7 +134,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   onClientDataChange(e.target.value, clientEmail);
                   if (errors.name) setErrors(prev => ({...prev, name: undefined}));
                 }}
-                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-colors ${
+                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-beige-500 focus:border-transparent transition-colors ${
                   errors.name ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="Tu nombre completo"
@@ -160,7 +160,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   onClientDataChange(clientName, e.target.value);
                   if (errors.email) setErrors(prev => ({...prev, email: undefined}));
                 }}
-                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-colors ${
+                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-beige-500 focus:border-transparent transition-colors ${
                   errors.email ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="tu@email.com"
@@ -173,7 +173,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           </div>
 
           {/* Información importante */}
-          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+          <div className=" rounded-xl p-4 border border-blue-200">
             <h4 className="font-medium text-blue-800 mb-2">Información Importante:</h4>
             <ul className="text-sm text-blue-700 space-y-1">
               <li>• Recibirás una confirmación por email</li>
@@ -186,11 +186,11 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full bg-linear-to-r from-beige-300 to-beige-500 text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {isLoading ? (
               <div className="flex items-center justify-center">
-                <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                <Loader2 className="w-5 h-5  mr-2" />
                 Procesando Reserva...
               </div>
             ) : (

@@ -1,6 +1,7 @@
 export const getAvailableTimeSlots = async (date: Date, duration: number) => {
   try {
-    const response = await fetch('https://hook.eu2.make.com/wtvhr5ld972trjrlgdty54d71iqhxdtc');
+    const url = import.meta.env.VITE_REACT_APP_MAKE_WEBHOOK_URL || '';
+    const response = await fetch(url);
 
     if (!response.ok) {
       throw new Error(`Error al consultar citas: ${response.statusText}`);
@@ -22,6 +23,19 @@ export const getAvailableTimeSlots = async (date: Date, duration: number) => {
 
     const endOfDay = new Date(date);
     endOfDay.setHours(18, 0, 0, 0);
+
+    // 🟢 NUEVO: ajustar el inicio si la fecha es HOY
+    const now = new Date();
+    const isToday = date.toDateString() === now.toDateString();
+
+    if (isToday) {
+      const rounded = new Date(now);
+      rounded.setMinutes(Math.ceil(rounded.getMinutes() / 30) * 30, 0, 0);
+
+      if (rounded > startOfDay) {
+        startOfDay.setHours(rounded.getHours(), rounded.getMinutes(), 0, 0);
+      }
+    }
 
     const timeSlots = [];
     const currentTime = new Date(startOfDay);

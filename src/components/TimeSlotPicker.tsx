@@ -1,6 +1,5 @@
 import React from 'react';
 import { Clock, Loader2 } from 'lucide-react';
-import { TimeSlot } from '../types';
 import { useCalendar } from '../hooks/useCalendar';
 
 interface TimeSlotPickerProps {
@@ -41,7 +40,7 @@ export const TimeSlotPicker: React.FC<TimeSlotPickerProps> = ({
 
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
-            <Loader2 className="w-8 h-8 animate-spin text-pink-500 mx-auto mb-4" />
+            <Loader2 className="w-8 h-8 animate-spin text-beige-800 mx-auto mb-4" />
             <p className="text-gray-600">Cargando horarios disponibles...</p>
           </div>
         </div>
@@ -120,8 +119,8 @@ export const TimeSlotPicker: React.FC<TimeSlotPickerProps> = ({
                     className={`
                       py-3 px-4 rounded-xl text-sm font-medium transition-all duration-200
                       ${selectedTime === slot.startTime
-                        ? 'bg-pink-500 text-white shadow-lg transform scale-105'
-                        : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-pink-300 hover:bg-pink-50'
+                        ? 'bg-beige-500 text-white shadow-lg transform scale-105'
+                        : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-beige-300 hover:bg-beige-50'
                       }
                     `}
                   >
@@ -147,8 +146,8 @@ export const TimeSlotPicker: React.FC<TimeSlotPickerProps> = ({
                     className={`
                       py-3 px-4 rounded-xl text-sm font-medium transition-all duration-200
                       ${selectedTime === slot.startTime
-                        ? 'bg-pink-500 text-white shadow-lg transform scale-105'
-                        : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-pink-300 hover:bg-pink-50'
+                        ? 'bg-beige-500 text-white shadow-lg transform scale-105'
+                        : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-beige-300 hover:bg-beige-50'
                       }
                     `}
                   >
@@ -162,8 +161,8 @@ export const TimeSlotPicker: React.FC<TimeSlotPickerProps> = ({
       )}
 
       {/* Información adicional */}
-      <div className="max-w-md mx-auto bg-pink-50 rounded-xl p-4 text-center">
-        <p className="text-sm text-pink-800">
+      <div className="max-w-md mx-auto bg-beige-50 rounded-xl p-4 text-center">
+        <p className="text-sm text-beige-800">
           <Clock className="w-4 h-4 inline mr-1" />
           Duración aproximada: {serviceDuration} minutos
         </p>

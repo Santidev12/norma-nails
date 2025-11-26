@@ -1,4 +1,4 @@
-# 🌸 GlamNails Studio - Sistema de Gestión de Citas
+# 🌸 Norma Nails Studio - Sistema de Gestión de Citas
 
 Sistema completo de reservas para salón de uñas con integración a Google Calendar, desarrollado en React con TypeScript y Tailwind CSS.
 
@@ -42,7 +42,7 @@ He elegido **React.js** para este proyecto por las siguientes razones:
 ### 1. Clonar el Repositorio
 ```bash
 git clone [repository-url]
-cd glamnails-booking-system
+cd nails
 ```
 
 ### 2. Instalar Dependencias
@@ -210,12 +210,4 @@ npm run preview
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## 📞 Soporte
-
-Para soporte técnico o preguntas:
-- **Email**: soporte@glamnails.com
-- **Teléfono**: (555) 123-4567
-
----
-
-Desarrollado con 💅 por el equipo de GlamNails Studio
+Desarrollado con 💅 por el equipo de Nails Studio by Norma

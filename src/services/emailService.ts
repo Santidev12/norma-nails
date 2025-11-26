@@ -33,7 +33,7 @@ export class EmailService {
       }),
       appointment_time: bookingData.selectedTime,
       duration: bookingData.selectedService.duration,
-      salon_name: 'GlamNails Studio'
+      salon_name: 'Norma Nails Studio'
     };
 
     try {
