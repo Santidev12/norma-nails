@@ -36,7 +36,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         </p>
       </div>
 
-      <div className="flex justify-center items-center w-full max-w-md px-4 mx-auto">
+      <div className="flex justify-center items-center">
         <Calendar
           mode="single"
           required
