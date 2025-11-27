@@ -36,7 +36,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         </p>
       </div>
 
-      <div className='flex justify-center text-center items-center w-[95%] sm:w-[30%] mx-auto'>
+      <div className="flex justify-center items-center w-full max-w-md px-4 mx-auto">
         <Calendar
           mode="single"
           required
@@ -44,7 +44,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           selected={selectedDate ?? undefined}
           onSelect={handleSelect}
           startMonth={new Date()}
-          className="rounded-2xl border p-4 w-full border-beige-300 shadow-xl"
+          className="rounded-2xl border p-4 w-full border-beige-300 shadow-xl "
           buttonVariant="ghost"
           classNames={{
             day_button: 'transition-all rounded-md hover:border hover:border-beige-500'
