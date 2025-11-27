@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { defineStepper } from "@stepperize/react";
+import { Check } from "lucide-react";
 
 interface StepIndicatorProps {
   currentStep: "service" | "date" | "time" | "details" | "confirmation";
@@ -45,7 +46,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep }) => 
                       ? "border-beige-800 text-beige-800"
                       : "border-gray-400 text-gray-400"}
                 `}>
-                  <span>{isPast ? "✔" : index + 1}</span>
+                  <span>{isPast ? <Check /> : index + 1}</span>
                 </div>
                 <span className={`
                   text-xs mt-2 font-medium transition-colors duration-300
