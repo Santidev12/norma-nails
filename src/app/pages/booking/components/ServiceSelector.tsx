@@ -1,7 +1,7 @@
 import React from 'react';
-import { Service } from '../types';
+import { Service } from '../hooks/types';
 import { NAIL_SERVICES } from '../data/services';
-import { Clock, Star } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 interface ServiceSelectorProps {
   onServiceSelect: (service: Service) => void;

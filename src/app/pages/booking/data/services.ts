@@ -1,4 +1,4 @@
-import { Service } from '../types';
+import { Service } from "../hooks/types";
 
 export const NAIL_SERVICES: Service[] = [
   {

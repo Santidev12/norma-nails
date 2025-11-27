@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import { BookingState, Service } from '../types';
-import { EmailService } from '../services/emailService';
+import { BookingState, Service } from './types';
+import { EmailService } from '../../../services/emailService';
 
 const initialState: BookingState = {
   step: 'service',

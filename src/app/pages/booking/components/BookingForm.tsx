@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { User, Mail, Calendar, Clock, Sparkles, Loader2 } from 'lucide-react';
-import { Service } from '../types';
+import { User, Mail, Calendar, Clock, Sparkles, Loader2, CalendarCheck2 } from 'lucide-react';
+import { Service } from '../hooks/types';
 
 interface BookingFormProps {
   selectedService: Service;
@@ -81,15 +81,15 @@ export const BookingForm: React.FC<BookingFormProps> = ({
 
       <div className="max-w-lg mx-auto">
         {/* Resumen de la reserva */}
-        <div className="bg-linear-to-r from-beige-100 to-beige-50 rounded-2xl p-6 mb-6 border border-beige-200 shadow">
+        <div className="bg-linear-to-r from-beige-100 to-beige-50 rounded-2xl p-6 mb-10 border border-beige-200 shadow-xl">
           <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-            <Sparkles className="w-5 h-5 text-beige-500 mr-2" />
+            <CalendarCheck2 className="w-5 h-5 text-beige-500 mr-2" />
             Resumen de tu Cita
           </h3>
           
           <div className="space-y-3">
             <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 bg-beige-100 rounded-full flex items-center justify-center mr-3">
+              <div className="w-8 h-8  rounded-full flex items-center justify-center mr-3">
                 <Sparkles className="w-4 h-4 text-beige-600" />
               </div>
               <div>
@@ -99,7 +99,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             </div>
 
             <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 bg-beige-100 rounded-full flex items-center justify-center mr-3">
+              <div className="w-8 h-8  rounded-full flex items-center justify-center mr-3">
                 <Calendar className="w-4 h-4 text-beige-600" />
               </div>
               <div>
@@ -108,7 +108,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             </div>
 
             <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 bg-beige-100 rounded-full flex items-center justify-center mr-3">
+              <div className="w-8 h-8  rounded-full flex items-center justify-center mr-3">
                 <Clock className="w-4 h-4 text-beige-600" />
               </div>
               <div>
@@ -177,7 +177,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             <h4 className="font-medium text-blue-800 mb-2">Información Importante:</h4>
             <ul className="text-sm text-blue-700 space-y-1">
               <li>• Recibirás una confirmación por email</li>
-              <li>• Te enviaremos un recordatorio 24 horas antes</li>
               <li>• Por favor llega 5 minutos antes de tu cita</li>
             </ul>
           </div>

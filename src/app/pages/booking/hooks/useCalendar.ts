@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TimeSlot } from '../types';
+import { TimeSlot } from './types';
 import { getAvailableTimeSlots } from '../utils/getAvailableTimeSlots';
 
 export const useCalendar = (date: Date, duration: number) => {

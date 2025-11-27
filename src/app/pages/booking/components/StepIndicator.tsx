@@ -42,14 +42,14 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep }) => 
                   ${isPast
                     ? "bg-beige-800 border-beige-800 text-white"
                     : isActive
-                      ? "bg-transparent border-beige-800 text-beige-800"
-                      : "bg-transparent border-gray-400 text-gray-400"}
+                      ? "border-beige-800 text-beige-800"
+                      : "border-gray-400 text-gray-400"}
                 `}>
                   <span>{isPast ? "✔" : index + 1}</span>
                 </div>
                 <span className={`
                   text-xs mt-2 font-medium transition-colors duration-300
-                  ${ (isPast || isActive) ? "text-gray-800" : "text-gray-400"}
+                  ${ (isPast || isActive) ? "text-beige-800" : "text-gray-400"}
                 `}>
                   {step.title}
                 </span>

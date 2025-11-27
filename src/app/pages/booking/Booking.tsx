@@ -1,18 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { LandingPage } from './components/LandingPage';
-import { Header } from './components/Header';
-import { StepIndicator } from './components/StepIndicator';
-import { ServiceSelector } from './components/ServiceSelector';
-import { DatePicker } from './components/DatePicker';
-import { TimeSlotPicker } from './components/TimeSlotPicker';
-import { BookingForm } from './components/BookingForm';
-import { BookingConfirmation } from './components/BookingConfirmation';
-import { useBooking } from './hooks/useBooking';
-import { Button } from './components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import { Header } from '../../components/Header';
+import { Button } from '../../components/ui/button';
+import { BookingConfirmation } from './components/BookingConfirmation';
+import { BookingForm } from './components/BookingForm';
+import { DatePicker } from './components/DatePicker';
+import { ServiceSelector } from './components/ServiceSelector';
+import { StepIndicator } from './components/StepIndicator';
+import { TimeSlotPicker } from './components/TimeSlotPicker';
+import { useBooking } from './hooks/useBooking';
 
-function BookingFlow() {
-  const {
+interface BookingProps {
+  goHome: () => void;
+}
+
+export const Booking: React.FC<BookingProps> = ({ goHome }) => {
+    const {
     state,
     selectService,
     selectDate,
@@ -85,8 +87,8 @@ function BookingFlow() {
   const showBackButton = state.step !== 'service' && state.step !== 'confirmation';
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-beige-100 via-white to-beige-50 font-generalSansSemiboldItalic">
-      <Header />
+    <div className="min-h-screen bg-linear-to-br from-beige-200 via-white to-beige-50 font-generalSansSemiboldItalic">
+      <Header goHome={goHome} />
 
       <main className="container mx-auto px-4 py-8">
         {/* Indicador de pasos */}
@@ -120,8 +122,7 @@ function BookingFlow() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-8 mt-16">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center py-20">
           <p className="text-gray-600 text-sm">
             © 2025 Nails Studio by Norma. Todos los derechos reservados.
           </p>
@@ -129,39 +130,6 @@ function BookingFlow() {
             Hecho con 💅 para nuestras clientas
           </p>
         </div>
-      </footer>
     </div>
   );
-}
-
-function App() {
-  const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen font-comforta">
-      <Routes>
-        {/* Ruta para la Landing Page */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Header />
-              <LandingPage onBookNow={() => navigate('/booking')} />
-            </>
-          }
-        />
-
-        {/* Ruta para el flujo de reserva */}
-        <Route path="/booking" element={<BookingFlow />} />
-      </Routes>
-    </div>
-  );
-}
-
-export default function RootApp() {
-  return (
-    <Router>
-      <App />
-    </Router>
-  );
-}
+};

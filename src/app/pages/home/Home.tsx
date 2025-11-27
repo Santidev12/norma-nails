@@ -1,13 +1,13 @@
 import React from 'react';
 import { Sparkles, Star, Users, Award, Phone, MapPin } from 'lucide-react';
-import { PulsatingButton } from './ui/pulsating-button';
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import { PulsatingButton } from '../../components/ui/pulsating-button';
+import { Carousel, CarouselContent, CarouselItem } from '../../components/ui/carousel';
 
-interface LandingPageProps {
+interface HomeProps {
   onBookNow: () => void;
 }
 
-export const LandingPage: React.FC<LandingPageProps> = ({ onBookNow }) => {
+export const Home: React.FC<HomeProps> = ({ onBookNow }) => {
   const images = [
     "/images/nails1.jpg",
     "/images/nails2.jpg",
@@ -117,7 +117,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onBookNow }) => {
               }
             ].map((feature, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-linear-to-r group-hover:from-beige-500 group-hover:to-beige-100 transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-beige-500 trasition-shadow">
+                <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-beige-600 shadow-sm group-hover:bg-linear-to-r group-hover:from-beige-100 group-hover:to-beige-50 transition-all duration-200 hover:shadow-lg hover:shadow-beige-500 trasition-shadow">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
@@ -162,14 +162,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onBookNow }) => {
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-white rounded border flex items-center justify-center">
-                        <span className="text-xs text-gray-800">{index + 1}</span>
-                      </div>
-                      <span className="font-medium">{service.title}</span>
-                    </div>
-                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
@@ -202,20 +194,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onBookNow }) => {
 
 
       {/* Contact Section */}
-      <section className="py-20 bg-perl text-beige-900" id='contacto'>
+      <section className="py-20 px-5 bg-perl text-beige-900" id='contacto'>
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="space-y-6">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-linear-to-r from-beige-700 to-beige-50 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-linear-to-r from-beige-800 to-beige-50 rounded-full flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">Nails by Norma</h3>
-                  <p className="text-sm text-beige-600">Studio</p>
+                  <p className="text-sm text-beige-800">Studio</p>
                 </div>
               </div>
-              <p className="text-beige-600 leading-relaxed">
+              <p className="text-beige-900 leading-relaxed">
                 Tu destino para el cuidado profesional de uñas y arte personalizado.
                 Creamos experiencias únicas que reflejan tu estilo personal.
               </p>
@@ -225,19 +217,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onBookNow }) => {
               <h4 className="text-xl font-semibold">Información de Contacto</h4>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-beige-600" />
-                  <span className="text-beige-600">(+34) 614 15 96 36</span>
+                  <Phone className="w-5 h-5 text-beige-900" />
+                  <span className="text-beige-900">(+34) 614 15 96 36</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-beige-600" />
-                  <span className="text-beige-600">Madrid, España</span>
+                  <MapPin className="w-5 h-5 text-beige-900" />
+                  <span className="text-beige-900">Madrid, España</span>
                 </div>
               </div>
             </div>
 
             <div className="space-y-6">
               <h4 className="text-xl font-semibold">Horarios de Atención</h4>
-              <div className="space-y-2 text-beige-600">
+              <div className="space-y-2 text-beige-900">
                 <div className="flex justify-between">
                   <span>Lunes - Viernes</span>
                   <span>9:00 AM - 7:00 PM</span>
@@ -248,12 +240,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onBookNow }) => {
                 </div>
                 <div className="flex justify-between">
                   <span>Domingo</span>
-                  <span className="text-beige-600 font-extrabold">Cerrado</span>
+                  <span className="text-beige-900 font-extrabold">Cerrado</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+          <div className="container mx-auto px-4 text-center mt-5">
+            <p className="text-beige-900 text-sm">
+              © 2025 Nails Studio by Norma. Todos los derechos reservados.
+            </p>
+            <p className="text-beige-900 text-xs mt-2">
+              Hecho con 💅 para nuestras clientas
+            </p>
+          </div>
       </section>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar } from '../components/ui/calendar';
+import { Calendar } from '../../../components/ui/calendar';
 
 interface DatePickerProps {
   selectedDate: Date | null;
@@ -11,16 +11,18 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   selectedDate,
   onDateSelect,
 }) => {
+ const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   const handleSelect = (date: Date | undefined) => {
     if (!date) return;
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const selected = new Date(date);
-    selected.setHours(0, 0, 0, 0);
-
-    if (selected < today) return; // No hacer nada si la fecha es anterior a hoy
-
     onDateSelect(date);
+  };
+
+  const isDisabled = (date: Date) => {
+    const d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+    return d < today;
   };
 
   return (
@@ -37,12 +39,16 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       <div className='flex justify-center text-center items-center w-[95%] sm:w-[30%] mx-auto'>
         <Calendar
           mode="single"
-          required={false}
+          required
+          disabled={isDisabled}
           selected={selectedDate ?? undefined}
           onSelect={handleSelect}
           startMonth={new Date()}
           className="rounded-2xl border p-4 w-full border-beige-300 shadow-xl"
           buttonVariant="ghost"
+          classNames={{
+            day_button: 'transition-all rounded-md hover:border hover:border-beige-500'
+          }}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle, Calendar, Clock, Mail, Sparkles, Home } from 'lucide-react';
-import { Service } from '../types';
+import { Service } from '../hooks/types';
 
 interface BookingConfirmationProps {
   selectedService: Service;

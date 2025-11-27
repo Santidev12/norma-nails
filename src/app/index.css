@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme {
   --color-beige-50: #f5f3ef;
   --color-beige-100: #e4dcd2;
@@ -61,12 +59,7 @@
 }
 
 /*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
+  Compatibilidad border-color con Tailwind v3
 */
 @layer base {
   *,
@@ -120,32 +113,6 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
 
 @layer base {
@@ -186,4 +153,47 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ---------------------------------------------------------
+   ✔ ALL BEIGE UTILITIES — Persistent in Production
+   (sin dark, sin variantes, sin duplicados)
+--------------------------------------------------------- */
+
+@layer utilities {
+  /* Backgrounds */
+  .bg-beige-50 { background-color: var(--color-beige-50); }
+  .bg-beige-100 { background-color: var(--color-beige-100); }
+  .bg-beige-200 { background-color: var(--color-beige-200); }
+  .bg-beige-300 { background-color: var(--color-beige-300); }
+  .bg-beige-400 { background-color: var(--color-beige-400); }
+  .bg-beige-500 { background-color: var(--color-beige-500); }
+  .bg-beige-600 { background-color: var(--color-beige-600); }
+  .bg-beige-700 { background-color: var(--color-beige-700); }
+  .bg-beige-800 { background-color: var(--color-beige-800); }
+  .bg-beige-900 { background-color: var(--color-beige-900); }
+
+  /* Text */
+  .text-beige-50 { color: var(--color-beige-50); }
+  .text-beige-100 { color: var(--color-beige-100); }
+  .text-beige-200 { color: var(--color-beige-200); }
+  .text-beige-300 { color: var(--color-beige-300); }
+  .text-beige-400 { color: var(--color-beige-400); }
+  .text-beige-500 { color: var(--color-beige-500); }
+  .text-beige-600 { color: var(--color-beige-600); }
+  .text-beige-700 { color: var(--color-beige-700); }
+  .text-beige-800 { color: var(--color-beige-800); }
+  .text-beige-900 { color: var(--color-beige-900); }
+
+  /* Borders */
+  .border-beige-50 { border-color: var(--color-beige-50); }
+  .border-beige-100 { border-color: var(--color-beige-100); }
+  .border-beige-200 { border-color: var(--color-beige-200); }
+  .border-beige-300 { border-color: var(--color-beige-300); }
+  .border-beige-400 { border-color: var(--color-beige-400); }
+  .border-beige-500 { border-color: var(--color-beige-500); }
+  .border-beige-600 { border-color: var(--color-beige-600); }
+  .border-beige-700 { border-color: var(--color-beige-700); }
+  .border-beige-800 { border-color: var(--color-beige-800); }
+  .border-beige-900 { border-color: var(--color-beige-900); }
 }
