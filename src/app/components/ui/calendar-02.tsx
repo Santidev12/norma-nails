@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Calendar } from "./ui/calendar"
+import { Calendar } from "./calendar"
 
 
 export default function Calendar02() {
