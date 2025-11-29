@@ -1,5 +1,7 @@
 import React from 'react';
-import { Calendar } from '../../../components/ui/calendar';
+import { DayPicker } from "react-day-picker";
+import { es } from "react-day-picker/locale";
+import "react-day-picker/style.css";
 
 interface DatePickerProps {
   selectedDate: Date | null;
@@ -19,12 +21,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     onDateSelect(date);
   };
 
-  const isDisabled = (date: Date) => {
-    const d = new Date(date);
-    d.setHours(0, 0, 0, 0);
-    return d < today;
-  };
-
   return (
     <div className="space-y-6">
       <div className="text-center">
@@ -36,18 +32,22 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         </p>
       </div>
 
-      <div className="flex justify-center items-center">
-        <Calendar
+      <div className="flex justify-center items-center w-full">
+        <DayPicker
           mode="single"
+          disabled={{ before: new Date() }}
+          locale={es}
+          navLayout='around'
           required
-          disabled={isDisabled}
           selected={selectedDate ?? undefined}
           onSelect={handleSelect}
           startMonth={new Date()}
-          className="rounded-2xl border p-4 w-full border-beige-300 shadow-xl "
-          buttonVariant="ghost"
+          animate
           classNames={{
-            day_button: 'transition-all rounded-md hover:border hover:border-beige-500'
+           today: "bg-beige-50 text-beige-900 font-semibold rounded-xl border-none",
+           day: "text-beige-900 font-medium hover:bg-beige-100 rounded-xl",
+           chevron: "bg-beige-50 rounded-full hover:bg-beige-100",
+           selected: "bg-beige-200 text-beige-900 font-semibold rounded-xl",
           }}
         />
       </div>

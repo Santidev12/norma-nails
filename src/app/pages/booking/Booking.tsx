@@ -122,8 +122,8 @@ export const Booking: React.FC<BookingProps> = ({ goHome }) => {
       </main>
 
       {/* Footer */}
-        <div className="container mx-auto px-4 text-center py-20">
-          <p className="text-gray-600 text-sm">
+        <div className="container mx-auto px-2 sm:px-4 text-center py-5 sm:py-20">
+          <p className="text-gray-600 text-xs sm:text-sm">
             © 2025 Nails Studio by Norma. Todos los derechos reservados.
           </p>
           <p className="text-gray-500 text-xs mt-2">
