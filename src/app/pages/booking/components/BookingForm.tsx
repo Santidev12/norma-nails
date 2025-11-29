@@ -172,15 +172,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             )}
           </div>
 
-          {/* Información importante */}
-          <div className=" rounded-xl p-4 border border-blue-200">
-            <h4 className="font-medium text-blue-800 mb-2">Información Importante:</h4>
-            <ul className="text-sm text-blue-700 space-y-1">
-              <li>• Recibirás una confirmación por email</li>
-              <li>• Por favor llega 5 minutos antes de tu cita</li>
-            </ul>
-          </div>
-
           {/* Botón de confirmación */}
           <button
             type="submit"
