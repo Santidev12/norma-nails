@@ -14,7 +14,6 @@ export const Home: React.FC<HomeProps> = ({ onBookNow }) => {
     "/images/nails3.jpg",
     "/images/nails4.jpg",
     "/images/nails5.jpg",
-    "/images/nails6.jpg",
   ];
   return (
     // blur en la parte de abajo de este div
